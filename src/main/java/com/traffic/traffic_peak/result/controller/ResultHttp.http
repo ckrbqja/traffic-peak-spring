@@ -1,0 +1,8 @@
+POST http://localhost:8080/result
+Content-Type: application/json
+
+{
+  "order_number" : "order_number",
+  "order_item_number" : "order_item_number",
+  "result_object" :  "result_object"
+}
