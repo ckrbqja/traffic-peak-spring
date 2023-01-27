@@ -6,7 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.*;
 
-@Entity @Getter @Setter
+@Entity @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 public class Result {
@@ -16,6 +16,4 @@ public class Result {
     private String orderNumber;
     private String orderItemNumber;
     private String resultObject;
-
-
 }

@@ -6,7 +6,7 @@ import com.traffic.traffic_peak.result.entity.Result;
 import lombok.*;
 
 
-@Getter @Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor(access =AccessLevel.PROTECTED)
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
