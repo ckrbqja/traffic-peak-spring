@@ -1,4 +1,4 @@
-package com.traffic.traffic_peak.controller.dto;
+package com.traffic.traffic_peak.health.controller.dto;
 
 import lombok.Getter;
 

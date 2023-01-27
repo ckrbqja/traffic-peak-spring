@@ -1,6 +1,6 @@
-package com.traffic.traffic_peak.controller;
+package com.traffic.traffic_peak.health.controller;
 
-import com.traffic.traffic_peak.controller.dto.HealthCheckDto;
+import com.traffic.traffic_peak.health.controller.dto.HealthCheckDto;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
