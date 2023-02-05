@@ -1,0 +1,23 @@
+node {
+    imageName = '967699999360.dkr.ecr.ap-northeast-2.amazonaws.com/result'
+    credentials = 'ecr:ap-northeast-2:ecr-credentials'
+    buildNum = "${env.BUILD_NUMBER}"
+
+    stage('✨ Clone Repo') {
+        checkout scm
+    }
+
+    stage('🐳 Dk Build') {
+        app = docker.build( imageName )
+    }
+
+    stage('🚀 Push Image') {
+        docker.withRegistry( 'https://' + imageName , credentials) {
+            app.push(buildNum)
+        }
+    }
+
+    stage("⚓ Helm Update")  {
+        build job : 'Build-test-4', parameters: [ string(name: 'BUILD_NUMBER', value: buildNum)]
+    }
+}
