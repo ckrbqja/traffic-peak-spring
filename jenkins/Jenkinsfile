@@ -8,9 +8,7 @@ node {
     }
 
     stage('✨ Build Gradle') {
-        steps {
-            bat "./gradlew.bat build"
-        }
+        bat "./gradlew.bat build"
     }
 
     stage('🐳 Dk Build') {
