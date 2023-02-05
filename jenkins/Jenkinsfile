@@ -7,7 +7,7 @@ node {
         checkout scm
     }
 
-    stage('✨ Build Gradle') {
+    stage('🏗️ Build') {
         sh "git update-index --add --chmod=+x gradlew"
         sh "./gradlew build"
     }
@@ -22,7 +22,7 @@ node {
         }
     }
 
-    stage("⚓ Helm Update")  {
+    stage("⚓ Helm Upt")  {
         build job : 'Build-test-4', parameters: [ string(name: 'BUILD_NUMBER', value: buildNum)]
     }
 }
