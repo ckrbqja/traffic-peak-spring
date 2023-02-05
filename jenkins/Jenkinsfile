@@ -8,7 +8,7 @@ node {
     }
 
     stage('✨ Build Gradle') {
-        sh "gradle clean build"
+        sh "./gradlew build"
     }
 
     stage('🐳 Dk Build') {
