@@ -7,6 +7,12 @@ node {
         checkout scm
     }
 
+    stage('✨ Build Gradle') {
+        steps {
+            bat "./gradlew.bat build"
+        }
+    }
+
     stage('🐳 Dk Build') {
         app = docker.build( imageName )
     }
