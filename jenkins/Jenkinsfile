@@ -8,6 +8,7 @@ node {
     }
 
     stage('✨ Build Gradle') {
+        sh "git update-index --add --chmod=+x gradlew"
         sh "./gradlew build"
     }
 
