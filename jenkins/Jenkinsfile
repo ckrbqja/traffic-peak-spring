@@ -26,7 +26,7 @@ node {
     stage("⚓ Helm Upt")  {
         build job : 'Build-test-4', parameters: [ 
                                                 string(name: 'BUILD_NM', value: buildNum)
-                                                 , string(name: 'IMAGE_NM', value: imageName) 
+                                                 , string(name: 'AWS_URL', value: awsUrl) 
                                                  , string(name: 'REPO_NM', value: awsRepo)
                                                 ]
     }
