@@ -18,7 +18,7 @@ node {
     }
 
     stage('🚀 Push Image') {
-        docker.withRegistry( 'https://' + imageName , credentials) {
+        docker.withRegistry( 'https://' + awsUrl + '/' + awsRepo , credentials) {
             app.push(buildNum)
         }
     }
