@@ -1,6 +1,7 @@
 node {
     awsUrl = '967699999360.dkr.ecr.ap-northeast-2.amazonaws.com'
     awsRepo = 'result'
+    imageName = awsUrl + '/' + awsRepo
     credentials = 'ecr:ap-northeast-2:ecr-credentials'
     buildNum = "${env.BUILD_NUMBER}"
 
@@ -18,7 +19,7 @@ node {
     }
 
     stage('🚀 Push Image') {
-        docker.withRegistry( 'https://' + awsUrl + '/' + awsRepo , credentials) {
+        docker.withRegistry( 'https://' + imageName , credentials) {
             app.push(buildNum)
         }
     }
