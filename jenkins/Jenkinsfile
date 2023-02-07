@@ -11,7 +11,7 @@ node {
         sh "git update-index --add --chmod=+x gradlew"
         sh "./gradlew build"
     }
-
+e
     stage('🐳 Dk Build') {
         app = docker.build( imageName )
     }
@@ -23,6 +23,6 @@ node {
     }
 
     stage("⚓ Helm Upt")  {
-        build job : 'Build-test-4', parameters: [ string(name: 'BUILD_NM', value: buildNum)]
+        build job : 'Build-test-4', parameters: [ string(name: 'BUILD_NM', value: buildNum), string(name: 'IMAGE_NM', value: imageName) ]
     }
 }
