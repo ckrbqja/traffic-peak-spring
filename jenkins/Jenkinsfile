@@ -1,5 +1,6 @@
 node {
-    imageName = '967699999360.dkr.ecr.ap-northeast-2.amazonaws.com/result'
+    awsUrl = '967699999360.dkr.ecr.ap-northeast-2.amazonaws.com'
+    awsRepo = 'result'
     credentials = 'ecr:ap-northeast-2:ecr-credentials'
     buildNum = "${env.BUILD_NUMBER}"
 
@@ -23,6 +24,10 @@ node {
     }
 
     stage("⚓ Helm Upt")  {
-        build job : 'Build-test-4', parameters: [ string(name: 'BUILD_NM', value: buildNum), string(name: 'IMAGE_NM', value: imageName) ]
+        build job : 'Build-test-4', parameters: [ 
+                                                string(name: 'BUILD_NM', value: buildNum)
+                                                 , string(name: 'IMAGE_NM', value: imageName) 
+                                                 , string(name: 'REPO_NM', value: awsRepo)
+                                                ]
     }
 }
