@@ -23,6 +23,6 @@ node {
     }
 
     stage("⚓ Helm Upt")  {
-        build job : 'Build-test-4', parameters: [ string(name: 'BUILD_NUMBER', value: buildNum)]
+        build job : 'Build-test-4', parameters: [ string(name: 'BUILD_NM', value: buildNum)]
     }
 }
