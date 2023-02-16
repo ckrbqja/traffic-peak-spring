@@ -4,6 +4,7 @@ node {
     imageName = awsUrl + '/' + awsRepo
     credentials = 'ecr:ap-northeast-2:ecr-credentials'
     buildNum = "${env.BUILD_NUMBER}"
+    applicationNm = "traffic-peak-spring"
 
     stage('✨ Clone Repo') {
         checkout scm
@@ -29,6 +30,7 @@ node {
                                                    string(name: 'BUILD_NM', value: buildNum)
                                                  , string(name: 'AWS_URL', value: awsUrl) 
                                                  , string(name: 'REPO_NM', value: awsRepo)
+                                                 , string(name: 'FOLDER_NM', value: applicationNm)
                                                 ]
     }
 }
