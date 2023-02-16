@@ -17,5 +17,6 @@ logging.level:
   org.hibernate.SQL: debug
 #  org.hibernate.type: trace
 server:
+  port: 8993
   servlet:
     context-path: /api/external/data
