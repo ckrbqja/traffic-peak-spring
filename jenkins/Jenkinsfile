@@ -7,7 +7,7 @@ node {
     applicationNm = "traffic-peak-spring"
 
     stage('✨ Clone Repo') {
-        checkout scm
+        git branch: 'master', credentialsId: 'my-credentials-id', url: 'https://github.com/ckrbqja/traffic-peak-spring.git'
     }
 
     stage('🏗️ Build') {
