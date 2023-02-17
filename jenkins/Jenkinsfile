@@ -7,6 +7,9 @@ node {
     applicationNm = "traffic-peak-spring"
 
     stage('✨ Clone Repo') {
+        
+        sh "git config --global user.email 'ckrbqja@gmail.com'"
+        sh "git config --global user.name 'ckrbqja'"Q
         git branch: 'master', credentialsId: 'my-credentials-id', url: 'https://github.com/ckrbqja/traffic-peak-spring.git'
     }
 
