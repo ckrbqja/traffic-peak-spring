@@ -6,7 +6,7 @@ node {
     buildNum = "${env.BUILD_NUMBER}"
     applicationNm = "traffic-peak-spring"
 
-    stage('✨ Clone Repo') {
+    stage('✨ Clone ') {
         git branch: 'master', credentialsId: 'my-credentials-id', url: 'https://github.com/ckrbqja/traffic-peak-spring.git'
     }
 
@@ -19,7 +19,7 @@ node {
         app = docker.build( imageName )
     }
 
-    stage('🚀 Push Image') {
+    stage('🚀 ECR Push') {
         docker.withRegistry( 'https://' + imageName , credentials) {
             app.push(buildNum)
         }
